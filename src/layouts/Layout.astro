@@ -20,16 +20,86 @@ const { title } = Astro.props;
   <SEOTags title={title} />
 
   <body
-    class="mx-auto flex min-h-screen max-w-[872px] flex-col gap-9 bg-neutral-950 px-10 py-8 text-sm text-neutral-400 md:gap-20 md:py-16"
+    class="mx-auto flex min-h-screen max-w-[872px] flex-col gap-9 bg-dark-sky px-10 py-8 text-sm text-neutral-400 md:gap-20 md:py-16"
   >
     <Header />
     <BlurCircle position="top" color={theme.colors.blur.top} />
     <BlurCircle position="bottom" color={theme.colors.blur.bottom} />
     <slot />
     <style is:global>
+      /* @font-face {
+        font-family: cubic;
+        src: url('@/fonts/Cubic_11.woff');
+      } */
+
       html {
         font-family: "Open Sans";
       }
     </style>
   </body>
+
+  <style>
+    .bg-dark-sky {
+      background-image: url("/images/background/starbackgroundWHITE.gif");
+    }
+  </style>
+
+  <script>
+  let pageviewUrl = 'cute-union.com'
+  let pageviewCount = '1';
+  let data = {
+    'entry.756459853': pageviewUrl,
+    'entry.2013883402': pageviewCount
+  };
+
+  function linkToGoogleForm () {
+    let formData = new URLSearchParams(data).toString();
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSe-04iK8FvFZ1cgUPiHbbQMVq9G3-7nWS9e7k5Vb3hYoV33ew/formResponse', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            console.log('Success:', xhr.responseText);
+        } else {
+            console.log('Error:', xhr.statusText);
+        }
+    };
+
+    xhr.send(formData);
+  }
+
+  function getDataFromForm() {
+    // 定義 Google Apps Script 網址
+    var url = 'https://script.google.com/macros/s/AKfycbzNCygLw1fKFFe6rgrhC6Sek9eblrTNM_55UQd7CDjWsW6jpJUPztYwpQZykg2A8fD0/exec';
+
+    // 建立 XMLHttpRequest
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, false); // 同步請求，將 `async` 設為 `false` (已過時，但保持原行為)
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) { // 確保請求完成
+            if (xhr.status === 200) { // 請求成功
+                try {
+                    var res = JSON.parse(xhr.responseText); // 將回應轉為 JSON
+                    console.log('res',res);
+                    // console.log('res',res);
+                    
+                } catch (e) {
+                    console.error('JSON parse error:', e);
+                }
+            } else {
+                console.error('Request error with status:', xhr.status);
+            }
+        }
+    };
+
+    // 發送請求
+    xhr.send();
+
+  }
+  linkToGoogleForm();
+  getDataFromForm();
+
+  </script>
 </html>

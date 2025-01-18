@@ -6,13 +6,15 @@ type Social = {
 type Presentation = {
   mail: string;
   title: string;
+  link:string;
   description: string;
   socials: Social[];
 };
 
 const presentation: Presentation = {
   mail: "gxanshu@yahoo.com",
-  title: "Hi, I’m Anshu 👋",
+  title: "Hi, I’m Wawa",
+  link: "Cute Union",
   description:
     "Howdy, i'm a *indian software programmer* with over *5 years* of web experience. I am currently working with *NextJS and Typescript*. Outside of work I complete my pokemon card collection and learning TypeScript.",
   socials: [

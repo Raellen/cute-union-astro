@@ -17,7 +17,11 @@ const posts = await getCollection("posts");
 <Layout>
   <main class="flex flex-col gap-20">
     <article class="flex flex-col gap-8">
-      <h1 class="text-3xl text-neutral-100">{presentation.title}</h1>
+      <div class="flex">
+        <h1 class="text-3xl text-neutral-100">{presentation.title}</h1>
+        <img class="object-contain" src="/images/icons/kaeru01.gif">
+      </div>
+
       <h2
         class="max-w-[60ch] leading-6"
         set:html={convertAsteriskToStrongTag(presentation.description)}
