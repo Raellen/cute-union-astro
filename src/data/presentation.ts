@@ -16,7 +16,7 @@ const presentation: Presentation = {
   title: "Hi, I’m Wawa",
   link: "Cute Union",
   description:
-    "Howdy, i'm a *indian software programmer* with over *5 years* of web experience. I am currently working with *NextJS and Typescript*. Outside of work I complete my pokemon card collection and learning TypeScript.",
+    "I'm a Taiwanese programmer with over 4 years of web experience",
   socials: [
     {
       label: "Twiiter",
