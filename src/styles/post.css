@@ -7,11 +7,11 @@
 }
 
 .post h2 {
-  @apply mt-6 text-3xl text-neutral-100;
+  @apply mt-6 text-3xl text-neutral-900;
 }
 
 .post h3 {
-  @apply mt-4 text-xl text-neutral-100;
+  @apply mt-4 text-xl text-neutral-900;
 }
 
 .post code {
@@ -19,7 +19,7 @@
 }
 
 .post a {
-  @apply text-neutral-100 underline;
+  @apply text-neutral-900 underline;
 }
 
 .post ul {

@@ -12,11 +12,12 @@ type Presentation = {
 };
 
 const presentation: Presentation = {
-  mail: "gxanshu@yahoo.com",
-  title: "Hi, I’m Wawa",
+  mail: "cuteunion.wawa@gmail.com",
+  title: "Welcome to Cute Union",
   link: "Cute Union",
   description:
-    "I'm a Taiwanese programmer with over 4 years of web experience",
+    "You can call me wawa.This is the place I share my interests",
+    // "You can call me wawa.I'm a programmer with over 4 years of web experience",
   socials: [
     {
       label: "Twiiter",

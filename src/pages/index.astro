@@ -18,8 +18,8 @@ const posts = await getCollection("posts");
   <main class="flex flex-col gap-20">
     <article class="flex flex-col gap-8">
       <div class="flex">
-        <h1 class="text-3xl text-neutral-100">{presentation.title}</h1>
-        <img class="object-contain" src="/images/icons/kaeru01.gif">
+        <h1 class="text-3xl text-neutral-900">{presentation.title}</h1>
+        <img class="object-contain" src="/images/icons/i16-1.gif" />
       </div>
 
       <h2
@@ -31,7 +31,7 @@ const posts = await getCollection("posts");
 
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100">Latest posts</h3>
+        <h3 class="text-lg text-neutral-900">Latest posts</h3>
         <Link href="/posts" label="See all posts" isUnderline target="_self" />
       </header>
       {posts.length === 0 && <p>Soon, stay connected 👀...</p>}
@@ -55,7 +55,7 @@ const posts = await getCollection("posts");
 
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100">
+        <h3 class="text-lg text-neutral-900">
           Selected projects ({projects.length})
         </h3>
       </header>
@@ -69,18 +69,28 @@ const posts = await getCollection("posts");
       </section>
     </article>
 
-    <article class="flex flex-col gap-8">
-      <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100">Get in touch</h3>
-      </header>
-      <p>
-        Email me at <Link
+    <!-- Email me at <Link
           href={`mailto:${presentation.mail}`}
           label={presentation.mail}
-        /> or follow me via my social links.
-      </p>
+        /> -->
 
-      <SocialLinks />
-    </article>
+    <footer class="flex flex-col items-center justify-between overflow-hidden">
+      <!-- FC2計數器 開始 -->
+      <script
+        type="text/javascript"
+        src="//counter1.fc2.com/counter.php?id=18028122&main=1"
+      ></script><noscript><img class="" height="13" /></noscript>
+      <!-- FC2計數器 結束 -->
+      <span>
+        Copyright © <span id="current-year"></span> Cute Union
+      </span>
+    </footer>
+
+    <script>
+      const yearSpan = document.getElementById("current-year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear().toString();
+      }
+    </script>
   </main>
 </Layout>
