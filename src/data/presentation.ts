@@ -1,35 +1,43 @@
-type Social = {
+type Buttons = {
   label: string;
   link: string;
+  img: string;
 };
 
 type Presentation = {
   mail: string;
   title: string;
-  link:string;
+  link: string;
   description: string;
-  socials: Social[];
+  buttons: Buttons[];
 };
 
 const presentation: Presentation = {
   mail: "cuteunion.wawa@gmail.com",
   title: "Welcome to Cute Union",
   link: "Cute Union",
-  description:
-    "You can call me wawa.This is the place I share my interests",
-    // "You can call me wawa.I'm a programmer with over 4 years of web experience",
-  socials: [
+  description: "You can call me wawa.This is the place I share my interests",
+  // "You can call me wawa.I'm a programmer with over 4 years of web experience",
+  buttons: [
     {
-      label: "Twiiter",
-      link: "https://twitter.com/gxanshu",
+      label: "Home",
+      link: "/",
+      img: "/images/buttons/home.gif",
     },
     {
-      label: "Bento",
-      link: "https://bento.me/gxanshu",
+      label: "About",
+      link: "/about",
+      img: "/images/buttons/about.gif",
     },
     {
-      label: "Github",
-      link: "https://github.com/gxanshu",
+      label: "Blog",
+      link: "/posts",
+      img: "/images/buttons/blog.gif",
+    },
+    {
+      label: "Links",
+      link: "/links",
+      img: "/images/buttons/links.gif",
     },
   ],
 };

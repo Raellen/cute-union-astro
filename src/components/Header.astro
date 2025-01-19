@@ -6,36 +6,37 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
 <header class="z-40 flex w-full flex-col gap-2 md:flex-row md:justify-between">
-  <a href="/" class="hover:text-neutral-900">{presentation.link}</a>
+  <a href="/" class="hover:text-neutral-900">
+    <img src={presentation.buttons[0].img} alt="home" />
+  </a>
 
   <nav role="navigation">
     <ul role="list" class="flex flex-row gap-2">
       <li>
         <a
-          href="/"
+          href="/about"
           class:list={{
             ["hover:text-neutral-900"]: true,
-            ["text-neutral-900"]: pathname === "/",
-          }}>Home</a
+            ["text-neutral-900"]: pathname === "/about",
+          }}><img src={presentation.buttons[1].img} alt="about" /></a
         >
       </li>
-      <li>/</li>
       <li>
         <a
           href="/posts"
           class:list={{
             ["hover:text-neutral-900"]: true,
             ["text-neutral-900"]: pathname === "/posts",
-          }}>Posts</a
+          }}><img src={presentation.buttons[2].img} alt="home" /></a
         >
       </li>
       <li>
         <a
-          href="/about"
+          href="/links"
           class:list={{
             ["hover:text-neutral-900"]: true,
             ["text-neutral-900"]: pathname === "/posts",
-          }}>Posts</a
+          }}><img src={presentation.buttons[3].img} alt="links" /></a
         >
       </li>
     </ul>
