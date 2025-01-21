@@ -5,9 +5,7 @@ import presentation from "@/data/presentation";
 const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
-<header
-  class="header px-10 pt-2 pb-12 z-40 flex  w-full flex-col gap-2 md:flex-row md:justify-between"
->
+<header class="z-40 flex w-full flex-col gap-2 md:flex-row md:justify-between">
   <a href="/" class="hover:text-neutral-900">
     <img src={presentation.buttons[0].img} alt="home" />
   </a>
@@ -43,11 +41,4 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
       </li>
     </ul>
   </nav>
-  <style>
-    .header {
-      background-image: url("/images/background/117.gif");
-      background-repeat: repeat-x;
-    background-position: 0 100%;
-    }
-  </style>
 </header>
