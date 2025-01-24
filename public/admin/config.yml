@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: raellen/raellen-main-astro #replace with your githu repo
+  repo: raellen/cute-union-astro #replace with your github repo
   branch: main
   squash_merges: true
   open_authoring: true
