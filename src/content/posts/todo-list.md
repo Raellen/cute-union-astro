@@ -8,3 +8,4 @@ isDraft: false
 1. C﻿omment system
 2. Status coffee
 3. g﻿uest book
+4. i﻿mood
