@@ -13,7 +13,7 @@ type Presentation = {
 };
 
 const presentation: Presentation = {
-  mail: "cuteunion.wawa@gmail.com",
+  mail: "ada0319541@gmail.com",
   title: "Welcome to Cute Union",
   link: "Cute Union",
   description: "You can call me wawa.This is the place I share my interests",
