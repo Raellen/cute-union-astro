@@ -5,8 +5,8 @@ import presentation from "@/data/presentation";
 const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
-<header class="z-40 flex w-full flex-col gap-2 md:flex-row md:justify-between">
-  <a href="/" class="hover:text-neutral-900">
+<header class="z-40 bg-cloud flex w-full flex-col gap-2 md:flex-row md:justify-between pt-8 md:pt-16 px-10">
+  <a href="/" class="hover:text-primary">
     <img src={presentation.buttons[0].img} alt="home" />
   </a>
 
@@ -16,8 +16,8 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
         <a
           href="/about"
           class:list={{
-            ["hover:text-neutral-900"]: true,
-            ["text-neutral-900"]: pathname === "/about",
+            ["hover:text-primary"]: true,
+            ["text-primary"]: pathname === "/about",
           }}><img src={presentation.buttons[1].img} alt="about" /></a
         >
       </li>
@@ -25,8 +25,8 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
         <a
           href="/posts"
           class:list={{
-            ["hover:text-neutral-900"]: true,
-            ["text-neutral-900"]: pathname === "/posts",
+            ["hover:text-primary"]: true,
+            ["text-primary"]: pathname === "/posts",
           }}><img src={presentation.buttons[2].img} alt="home" /></a
         >
       </li>
@@ -34,11 +34,18 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
         <a
           href="/links"
           class:list={{
-            ["hover:text-neutral-900"]: true,
-            ["text-neutral-900"]: pathname === "/posts",
+            ["hover:text-primary"]: true,
+            ["text-primary"]: pathname === "/posts",
           }}><img src={presentation.buttons[3].img} alt="links" /></a
         >
       </li>
     </ul>
   </nav>
 </header>
+
+<style>
+  .bg-cloud {
+    background-image: url("/images/background/80x80th_cloud1a.gif");
+    background-size: contain;
+  }
+</style>

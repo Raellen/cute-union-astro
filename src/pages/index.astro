@@ -12,13 +12,16 @@ import presentation from "@/data/presentation";
 import projects from "@/data/projects";
 
 const posts = await getCollection("posts");
+const sortedPosts = posts.sort((a, b) => 
+  new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
+);
 ---
 
 <Layout>
-  <main class="flex flex-col gap-20">
+  <main class="flex flex-col gap-20 px-10">
     <article class="flex flex-col gap-8">
       <div class="flex">
-        <h1 class="text-3xl text-neutral-900">{presentation.title}</h1>
+        <h1 class="text-3xl text-primary">{presentation.title}</h1>
         <img class="object-contain" src="/images/icons/i16-1.gif" />
       </div>
 
@@ -31,7 +34,7 @@ const posts = await getCollection("posts");
 
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-900">Latest posts</h3>
+        <h3 class="text-lg text-primary">Latest posts</h3>
         <Link href="/posts" label="See all posts" isUnderline target="_self" />
       </header>
       {posts.length === 0 && <p>Soon, stay connected 👀...</p>}
@@ -53,9 +56,9 @@ const posts = await getCollection("posts");
       </section>
     </article>
 
-    <article class="flex flex-col gap-8">
+    <!-- <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-900">
+        <h3 class="text-lg text-primary">
           Selected projects ({projects.length})
         </h3>
       </header>
@@ -67,7 +70,7 @@ const posts = await getCollection("posts");
             projects.map((project) => <ProjectCard {...project} />)
         }
       </section>
-    </article>
+    </article> -->
 
     <!-- Email me at <Link
           href={`mailto:${presentation.mail}`}

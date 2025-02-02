@@ -1,29 +1,35 @@
+:root {
+  --primary-color: #221501;
+  /* --primary-color: #865300; */
+  --secondary-color: #b75e01;
+  --tertiary-color:#f79022;
+}
+
 .post p {
   @apply leading-7;
 }
 
 .post code {
-  @apply rounded-sm bg-neutral-800 px-1 py-[2px] text-orange-500;
+  @apply rounded-sm bg-neutral-200 px-1 py-[2px] text-orange-500;
 }
 
 .post h2 {
-  @apply mt-6 text-3xl text-neutral-900;
+  @apply mt-6 text-3xl text-primary;
 }
 
 .post h3 {
-  @apply mt-4 text-xl text-neutral-900;
-}
-
-.post code {
-  @apply rounded-sm bg-neutral-800 px-1 py-[2px] text-red-500;
+  @apply mt-4 text-xl text-primary;
 }
 
 .post a {
-  @apply text-neutral-900 underline;
+  @apply text-primary underline;
 }
 
 .post ul {
   @apply list-disc;
+}
+.post ol {
+  @apply list-decimal;
 }
 
 .post blockquote {
@@ -36,4 +42,19 @@
 
 .post pre > code {
   @apply bg-transparent;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.border-secondary {
+  border-color: var(--secondary-color);
+}
+
+.border-tertiary{
+  border-color: var(--tertiary-color);
 }
