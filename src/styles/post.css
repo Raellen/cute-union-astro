@@ -1,5 +1,5 @@
 :root {
-  --primary-color: hsl(341, 66%, 64%);
+  --primary-color: hsl(356, 66%, 64%);
   /* --primary-color: #865300; */
   --secondary-color: #b75e01;
   --tertiary-color:#f79022;
@@ -60,4 +60,11 @@
 
 .border-tertiary{
   border-color: var(--tertiary-color);
+}
+
+ul {
+  @apply list-disc;
+}
+ol {
+  @apply list-decimal !important;
 }
