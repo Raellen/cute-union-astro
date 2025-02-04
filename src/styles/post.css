@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #221501;
+  --primary-color: hsl(341, 66%, 64%);
   /* --primary-color: #865300; */
   --secondary-color: #b75e01;
   --tertiary-color:#f79022;
@@ -46,6 +46,9 @@
 
 .text-primary {
   color: var(--primary-color);
+}
+.border-primary {
+  border-color: var(--primary-color);
 }
 .text-secondary {
   color: var(--secondary-color);
