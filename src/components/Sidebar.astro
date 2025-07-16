@@ -1,0 +1,101 @@
+---
+import removeTrailingSlash from "@/utils/removeTrailingSlash";
+import presentation from "@/data/presentation";
+
+const pathname = removeTrailingSlash(Astro.url.pathname);
+---
+
+<aside class="sidebar-left">
+  <!-- <img src="/assets/avatar.png" alt="avatar" /> -->
+  <nav role="navigation">
+    <ul role="list">
+      <li>
+        <a
+          href="/"
+          class="block w-full"
+          class:list={{
+            ["hover:text-primary"]: true,
+            ["text-primary"]: pathname === "/",
+          }}>Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/about"
+          class="block w-full"
+          class:list={{
+            ["hover:text-primary"]: true,
+            ["text-primary"]: pathname === "/about",
+          }}>About</a
+        >
+      </li>
+      <li>
+        <a
+          href="/posts"
+          class="block w-full"
+          class:list={{
+            ["hover:text-primary"]: true,
+            ["text-primary"]: pathname === "/posts",
+          }}>Posts</a
+        >
+      </li>
+      <li>
+        <a
+          href="/links"
+          class="block w-full"
+          class:list={{
+            ["hover:text-primary"]: true,
+            ["text-primary"]: pathname === "/posts",
+          }}>Links</a
+        >
+      </li>
+    </ul>
+  </nav>
+</aside>
+
+<style>
+  .sidebar-left {
+    width: 20%;
+    text-align: center;
+  }
+  .sidebar-left img {
+    border: 4px dotted #add8e6;
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .sidebar-left nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-left nav a {
+    text-decoration: none;
+    color: #5596c2;
+  }
+  .sidebar-left nav li:hover {
+    background: #d4efff;
+    transform: scale(1.03);
+  }
+  .sidebar-left nav li {
+    background: #f0fbff;
+    margin: 0.5rem 0;
+    border: 1px dashed #a0c8e0;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+  .sidebar-left.pink nav li:hover {
+    background: #ffe0eb;
+  }
+  .sidebar-left.pink img {
+    border: 4px dotted #f3c5d0;
+  }
+
+  .sidebar-left.pink nav li {
+    background: #fff9fb;
+    border: 1px dashed #e5a9b3;
+  }
+  .sidebar-left.pink nav a {
+    color: #da6d88;
+  }
+</style>

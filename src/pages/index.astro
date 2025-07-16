@@ -12,8 +12,10 @@ import presentation from "@/data/presentation";
 import projects from "@/data/projects";
 
 const posts = await getCollection("posts");
-const sortedPosts = posts.sort((a, b) => 
-  new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(b.data.publishedAt).getTime() -
+    new Date(a.data.publishedAt).getTime()
 );
 ---
 
@@ -21,7 +23,7 @@ const sortedPosts = posts.sort((a, b) =>
   <main class="flex flex-col gap-20 px-10">
     <article class="flex flex-col gap-8">
       <div class="flex">
-        <h1 class="text-3xl text-primary">{presentation.title}</h1>
+        <h1 class="text-primary text-3xl">{presentation.title}</h1>
         <img class="object-contain" src="/images/icons/i16-1.gif" />
       </div>
 
@@ -34,7 +36,7 @@ const sortedPosts = posts.sort((a, b) =>
 
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-primary">Latest posts</h3>
+        <h3 class="text-primary text-lg">Latest posts</h3>
         <Link href="/posts" label="See all posts" isUnderline target="_self" />
       </header>
       {posts.length === 0 && <p>Soon, stay connected 👀...</p>}
@@ -77,23 +79,6 @@ const sortedPosts = posts.sort((a, b) =>
           label={presentation.mail}
         /> -->
 
-    <footer class="flex flex-col items-center justify-between overflow-hidden">
-      <!-- FC2計數器 開始 -->
-      <script
-        type="text/javascript"
-        src="//counter1.fc2.com/counter.php?id=18028122&main=1"
-      ></script><noscript><img class="" height="13" /></noscript>
-      <!-- FC2計數器 結束 -->
-      <span>
-        Copyright © <span id="current-year"></span> Cute Union
-      </span>
-    </footer>
-
-    <script>
-      const yearSpan = document.getElementById("current-year");
-      if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear().toString();
-      }
-    </script>
+   
   </main>
 </Layout>

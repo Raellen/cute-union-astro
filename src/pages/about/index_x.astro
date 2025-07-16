@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import formatDate from "@/utils/formatDate";
+import presentation from "@/data/presentation";
+
+const posts = await getCollection("posts");
+---
+
+<Layout title="Cute Union - About">
+  <main class="flex flex-col gap-20 px-10">
+    <article class="flex flex-col gap-4">
+      <h1 class="text-2xl text-primary">About</h1>
+      <h2>About Wawa</h2>
+      I'm a front-end developer with 4 years of experience.<br>
+      I'm a 90's kid, so I really love the Y2K web style of the 2000s.<br>
+      Based on my interest, I created this website as my blog.<br>
+      <!-- If you have any questions about web development, feel free to ask me and send an email to my mailbox <a class="text-primary" -->
+      <!-- href={`mailto:${presentation.mail}`}>{presentation.mail}</a>   -->
+      </article>
+
+    <article class="flex flex-col gap-4">
+      <h2>Games</h2>
+      <ul>
+        <li>
+          Skyrim Special Edition- 420 hours
+        </li>
+        <li>
+          Stardew Valley - 670 hours
+        </li>
+        <li>
+          MineCraft - ? hours
+        </li>
+        <li>
+          Valheim - 233 hours
+        </li>
+        <li>
+          Fallout: New Vegas - 70 hours
+        </li>
+      </ol>
+    </article>
+
+    <article>
+      <h2>Music</h2>
+
+    </article>
+  </main>
+</Layout>

@@ -1,48 +1,110 @@
 ---
-import { getCollection } from "astro:content";
+title: "About Me";
 import Layout from "@/layouts/Layout.astro";
-import formatDate from "@/utils/formatDate";
-import presentation from "@/data/presentation";
-
-const posts = await getCollection("posts");
 ---
 
 <Layout title="Cute Union - About">
-  <main class="flex flex-col gap-20 px-10">
-    <article class="flex flex-col gap-4">
-      <h1 class="text-2xl text-primary">About</h1>
-      <h2>About Wawa</h2>
-      I'm a front-end developer with 4 years of experience.<br>
-      I'm a 90's kid, so I really love the Y2K web style of the 2000s.<br>
-      Based on my interest, I created this website as my blog.<br>
-      If you have any questions about web development, feel free to ask me and send an email to my mailbox <a class="text-primary"
-      href={`mailto:${presentation.mail}`}>{presentation.mail}</a>  
-      </article>
+  <!-- About Me Page -->
 
-    <article class="flex flex-col gap-4">
-      <h2>Games</h2>
-      <ul>
-        <li>
-          Skyrim Special Edition- 420 hours
-        </li>
-        <li>
-          Stardew Valley - 670 hours
-        </li>
-        <li>
-          MineCraft - ? hours
-        </li>
-        <li>
-          Valheim - 233 hours
-        </li>
-        <li>
-          Fallout: New Vegas - 70 hours
-        </li>
-      </ol>
-    </article>
+  <div class="bio">
+    <p>
+      hello !! my name is ellie ! 🧸 i live in my own tiny house in the middle
+      of the forest, with a few of my family members as my next-door neighbors
+      🏡
+    </p>
 
-    <article>
-      <h2>Music</h2>
+    <p>
+      our forest is very pretty !! 🌳 the trees are plentiful, and the whole
+      place blooms all sorts of pretty flowers during different parts of the
+      year! 🌼 we get many many cute bunnies, bees, butterflies, mice, birds,
+      deer, squirrels, chipmunks, frogs, and several more friendly creatures !!
+      🐸
+    </p>
 
-    </article>
-  </main>
+    <p>
+      not all of the animals are wild ! we have our own chickens and bees ! 🐝
+      they are very polite ,, we grow our own food , too ! pretty much any
+      common veggie or fruit you can think of, we grow it ! 🍀 my favorite is
+      our strawberry plants ! 🍓
+    </p>
+  </div>
 </Layout>
+
+<style>
+  .about-page {
+    background: #eaf6fb;
+    color: #8c6f6f;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    padding: 2rem;
+  }
+  .about-page.pink {
+    background: #fffafc;
+  }
+  .container {
+    display: flex;
+    border: 2px dashed #b6deef;
+    background: #e0f4ff;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 10px #bce4f5;
+  }
+  .container.pink {
+    border: 2px dashed #f5ccd7;
+    background: #fff0f5;
+    box-shadow: 0 0 10px #fddde6;
+  }
+  .sidebar {
+    width: 20%;
+    text-align: center;
+  }
+
+  .about-content {
+    width: 60%;
+    padding: 0 2rem;
+  }
+  .about-content .title {
+    font-size: 2rem;
+    text-align: center;
+    color: #5596c2;
+  }
+  .about-content.pink .title {
+    color: #d982ab;
+  }
+  .bio p {
+    background: #f0fbff;
+    border-left: 4px dotted #a0c8e0;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
+  .bio.pink p {
+    background: #fff7f9;
+    border-left: 4px dotted #eecad4;
+  }
+  .profile {
+    width: 20%;
+    text-align: center;
+  }
+  .profile .full-art {
+    width: 100%;
+    border-radius: 20px;
+  }
+  .info-box {
+    background: #fdecef;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px dashed #e7b8c6;
+  }
+  .info-box strong {
+    color: #d1829b;
+  }
+
+  .about-page.pink .info-box {
+    background: #fdecef;
+    border-color: #e7b8c6;
+  }
+  .about-page.pink .info-box strong {
+    color: #d1829b;
+  }
+</style>
