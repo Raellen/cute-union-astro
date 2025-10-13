@@ -34,10 +34,11 @@ const updates = await getCollection("updates");
 
     <article class="flex flex-col gap-8">
       <h3 class="text-primary text-lg font-bold">Updates</h3>
-      <section class="flex flex-col max-h-[250px] gap-4 overflow-y-scroll bg-white w-[500px]">
+      <section class="flex flex-col max-h-[250px] p-4 gap-4 overflow-y-scroll bg-white w-[500px]">
         {
           updates.length !== 0 &&
             updates
+              .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
               .slice(0, 10)
               .map((updates) => (
                 <UpdateCard
