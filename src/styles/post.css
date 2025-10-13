@@ -1,9 +1,4 @@
-:root {
-  --primary-color: hsl(356, 66%, 64%);
-  /* --primary-color: #865300; */
-  --secondary-color: #b75e01;
-  --tertiary-color:#f79022;
-}
+
 
 .post p {
   @apply leading-7;

@@ -16,7 +16,7 @@ const presentation: Presentation = {
   mail: "cuteunion.wawa@gmail.com",
   title: "Welcome to Cute Union",
   link: "Cute Union",
-  description: "You can call me wawa.This is the place I share my interests",
+  description: "This is the place I share my interests",
   // "You can call me wawa.I'm a programmer with over 4 years of web experience",
   buttons: [
     {
