@@ -48,14 +48,13 @@ const updates = await getCollection("updates");
                 />
               ))
         }
-        <Link href="/updates" label="...See all updates" isUnderline target="_self" />
+        <Link href="/updates" label="...See all updates"  target="_self" />
       </section>
     </article>
 
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
         <h3 class="text-primary text-lg font-bold">Latest posts</h3>
-        <Link href="/posts" label="See all posts" isUnderline target="_self" />
       </header>
       {posts.length === 0 && <p>Soon, stay connected 👀...</p>}
 
@@ -74,6 +73,7 @@ const updates = await getCollection("updates");
               ))
         }
       </section>
+      <Link href="/posts" label="See all posts" isUnderline target="_self" />
     </article>
 
     <!-- <article class="flex flex-col gap-8">
