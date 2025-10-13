@@ -1,5 +1,5 @@
 ---
-import Comment from '../components/Comment.astro'; 
+import Comment from "../components/Comment.astro";
 const { frontmatter } = Astro.props;
 
 import { CollectionEntry, getCollection } from "astro:content";
@@ -39,10 +39,10 @@ const { Content } = await post.render();
 </Layout>
 
 <style is:global>
- #cusdis_thread {
+  #cusdis_thread {
     scrollbar-width: thin;
     scrollbar-color: white #cfefff;
- }
+  }
   #cusdis_thread iframe {
     border-radius: 12px;
     height: 100%;
@@ -50,8 +50,13 @@ const { Content } = await post.render();
     width: 100%;
     min-height: 400px;
     transition: all 0.3s ease;
-    font-family:MS Gothic;
+    font-family: MS Gothic;
+  }
 
+  ul {
+    @apply list-inside list-disc;
+  }
+  ol {
+    @apply list-inside list-decimal;
   }
 </style>
-

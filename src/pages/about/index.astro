@@ -1,6 +1,7 @@
 ---
 title: "About Me";
 import Layout from "@/layouts/Layout.astro";
+import Link from "@/components/shared/Link.astro";
 ---
 
 <Layout title="Cute Union - About">
@@ -25,12 +26,20 @@ import Layout from "@/layouts/Layout.astro";
         <li>Valheim - 233 hours</li>
         <li>Fallout: New Vegas - 70 hours</li>
       </ul>
+      <Link href="https://steamcommunity.com/id/Raellen/" label="Find me on Steam" isUnderline target="_self" />
     </article>
   </div>
  </main>
 </Layout>
 
 <style>
+  ul {
+  @apply list-disc list-inside;
+}
+ol {
+  @apply list-decimal list-inside;
+}
+
   .about-page {
     background: #eaf6fb;
     color: #8c6f6f;
