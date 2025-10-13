@@ -1,13 +1,17 @@
+---
+const { pageTitle } = Astro.props;
+---
+
 <div id="giscus-container">
-<h3 class="text-primary text-lg">Leave a comment</h3>
+<h3 class="mt-10 mb-3 text-black text-lg font-bold">Leave a comment</h3>
 </div>
 
 <div id="cusdis_thread"
   data-host="https://cusdis.com"
   data-app-id="bfada918-b354-46e8-b6a8-a0ff2e5f4110"
-  data-page-id="{{ PAGE_ID }}"
-  data-page-url="{{ PAGE_URL }}"
-  data-page-title="{{ PAGE_TITLE }}"
+ data-page-id={Astro.url.pathname}
+  data-page-url={Astro.url.pathname}
+  data-page-title={pageTitle}
 ></div>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
@@ -20,15 +24,20 @@ const observer = new MutationObserver((mutations) => {
 
         const additionalStyles = `
         iframe {
-                height: 500px;
-        }
-        
-        .dark {
-            background: black;
         }
 
         #root {
-                height:500px;
+            font-family:MS Gothic;
+            scrollbar-width: thin;
+            scrollbar-color: white #cfefff;
+        }
+
+        input {
+            background: #fff !important;
+        }
+
+        textarea {
+            background: #fff !important;
         }
         `;
         

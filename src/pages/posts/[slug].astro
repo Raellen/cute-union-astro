@@ -1,4 +1,7 @@
 ---
+import Comment from '../components/Comment.astro'; 
+const { frontmatter } = Astro.props;
+
 import { CollectionEntry, getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import formatDate from "@/utils/formatDate";
@@ -22,7 +25,7 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title}>
-  <main class="post mx-auto flex w-full max-w-prose flex-col gap-4">
+  <main id="post-slug" class="post mx-auto flex w-full flex-col gap-4">
     <header role="presentation">
       <h1 class="text-2xl">
         {post.data.title} - {formatDate(post.data.publishedAt)}
@@ -34,3 +37,21 @@ const { Content } = await post.render();
     <Comment />
   </main>
 </Layout>
+
+<style is:global>
+ #cusdis_thread {
+    scrollbar-width: thin;
+    scrollbar-color: white #cfefff;
+ }
+  #cusdis_thread iframe {
+    border-radius: 12px;
+    height: 100%;
+    border: 2px solid #b6deef;
+    width: 100%;
+    min-height: 400px;
+    transition: all 0.3s ease;
+    font-family:MS Gothic;
+
+  }
+</style>
+

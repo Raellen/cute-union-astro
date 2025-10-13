@@ -6,11 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': 'hsla(219, 80%, 36%, 1.00)',
+        'primary': 'hsla(194, 62%, 42%, 1.00)',
         'secondary': '#b6deef',
         'tertiary': '#1393caff',
       },
       fontFamily: {
+        gothic: ["MS Gothic",...defaultTheme.fontFamily.sans],
         sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
       },
     },
