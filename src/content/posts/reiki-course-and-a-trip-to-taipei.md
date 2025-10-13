@@ -1,5 +1,5 @@
 ---
-title: Reiki course and a trip to Taipei
+title: 2ed Level Reiki course
 description: Reiki course and a trip to Taipei
 publishedAt: 2025-02-21T14:11:06.504Z
 isPublish: true

@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import SocialLinks from "@/components/SocialLinks.astro";
 import PostCard from "@/components/PostCard.astro";
+import UpdateCard from "@/components/UpdateCard.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 import Link from "@/components/shared/Link.astro";
 import convertAsteriskToStrongTag from "@/utils/convertAsteriskToStrongTag";
@@ -12,17 +13,14 @@ import presentation from "@/data/presentation";
 import projects from "@/data/projects";
 
 const posts = await getCollection("posts");
-const sortedPosts = posts.sort(
-  (a, b) =>
-    new Date(b.data.publishedAt).getTime() -
-    new Date(a.data.publishedAt).getTime()
-);
+const updates = await getCollection("updates");
 ---
 
 <Layout>
   <main class="flex flex-col gap-20 px-10">
     <article class="flex flex-col gap-8">
       <div class="flex">
+        {updates}
         <h1 class="text-primary text-3xl">{presentation.title}</h1>
         <img class="object-contain" src="/images/icons/i16-1.gif" />
       </div>
@@ -35,8 +33,28 @@ const sortedPosts = posts.sort(
     </article>
 
     <article class="flex flex-col gap-8">
+      <h3 class="text-primary text-lg font-bold">Updates</h3>
+      <section class="flex flex-col max-h-[250px] gap-4 overflow-y-scroll bg-white w-[500px]">
+        {
+          updates.length !== 0 &&
+            updates
+              .slice(0, 10)
+              .map((updates) => (
+                <UpdateCard
+                  publishedAt={updates.data.publishedAt}
+                  title={updates.data.title}
+                  description={updates.data.description}
+                  slug={updates.slug}
+                />
+              ))
+        }
+        <Link href="/updates" label="...See all updates" isUnderline target="_self" />
+      </section>
+    </article>
+
+    <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-primary text-lg">Latest posts</h3>
+        <h3 class="text-primary text-lg font-bold">Latest posts</h3>
         <Link href="/posts" label="See all posts" isUnderline target="_self" />
       </header>
       {posts.length === 0 && <p>Soon, stay connected 👀...</p>}
