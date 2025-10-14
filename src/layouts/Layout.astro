@@ -2,7 +2,6 @@
 import Sidebar from "../components/Sidebar.astro";
 import SEOTags from "@/components/seo/SEOTags.astro";
 
-import "@fontsource/open-sans";
 import "@/styles/tailwind.css";
 import "@/styles/post.css";
 import "@/styles/main.css";
@@ -43,7 +42,7 @@ const { title } = Astro.props;
         /></noscript
       >
       <!-- FC2計數器 結束 -->
-      <span>
+      <span class="text-light-blue">
         Copyright © <span id="current-year"></span> Mint Sorai
       </span>
     </footer>
@@ -69,6 +68,8 @@ const { title } = Astro.props;
         margin: 0;
         @apply font-gothic;
         color: #3b4f58ff;
+        background-image: url("/public/images/background/sky-bg.png");
+        background-size: cover;
       }
 
       footer.pink {
@@ -99,7 +100,7 @@ const { title } = Astro.props;
         max-width: 1200px;
         border: 3px dotted #b6deef;
         border-radius: 20px;
-        background-color: #e0f4ff;
+        background-color: #e0f4ffe0;
         box-shadow: 0 0 10px #bce4f5;
         padding: 1rem;
       }

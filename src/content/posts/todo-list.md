@@ -12,3 +12,4 @@ isDraft: false
 - [ ] 5. gallery page
 - [x] 6. Fix the list style of the posts
 - [x] 7. Logo
+- [ ] 8. Tutorials page of website making

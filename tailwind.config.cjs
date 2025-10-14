@@ -9,6 +9,8 @@ module.exports = {
         'primary': 'hsla(194, 62%, 42%, 1.00)',
         'secondary': '#b6deef',
         'tertiary': '#1393caff',
+        'bg-blue': '#bce4f5',
+        'light-blue': '#f0fbff'
       },
       fontFamily: {
         gothic: ["MS Gothic",...defaultTheme.fontFamily.sans],
