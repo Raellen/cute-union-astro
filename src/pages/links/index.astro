@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
-import formatDate from "@/utils/formatDate";
+import ImageLink from "@/components/shared/ImageLink.astro";
 
 const posts = await getCollection("posts");
 ---
@@ -9,22 +9,32 @@ const posts = await getCollection("posts");
 <Layout title="Mint Sorai - Links">
   <main class="flex flex-col gap-20 px-10">
     <h1 class="text-2xl text-primary">Links</h1>
-    <article>
-      <div class="mb-10">
-        <h2 class="mb-4">Cute Websites</h2>
+    <article class="flex flex-col gap-6">
+      <div>
+        <div class="mb-4">
+          <h2 class="font-bold">Cool Websites</h2>
+          <span class="text-sm">Cool websites that you should check out</span>
+        </div>
         <div class="flex gap-4">
-          <a href="https://turd.neocities.org/">
-            <img src="https://turd.neocities.org/images/turd.png">
-          </a>
-          <a href="https://cloverbell.neocities.org/" target=blank><img src="https://cloverbell.neocities.org/n_n/cloverbell.gif"></a> 
+          <ImageLink href="https://turd.neocities.org" img="https://turd.neocities.org/images/turd.png" alt="turd" target="_blank" />
+          <ImageLink href="https://cloverbell.neocities.org/" img="https://cloverbell.neocities.org/n_n/cloverbell.gif" alt="cloverbell" target="_blank" />
+          <ImageLink href="https://strawbunimilk.neocities.org/" alt="strawbunimilk" label="strawbunimilk" target="_blank" />
+          <ImageLink href="https://alcedonia.neocities.org/" img="https://i.imgur.com/05ADnHT.gif" alt="alcedonia" target="_blank" />
         </div>
       </div>
-      <div class="mb-4">
-        <h2>Credits</h2>
-        <a href="https://sweetcharm.net/" target="_blank">
-          <img src="/images/links/bannericeream.gif" alt="SweetCharm" />
-        </a>
+      <div>
+        <h2 class="font-bold mb-4">Credits</h2>
+        <ImageLink href="https://sweetcharm.net/" img="/images/links/bannericeream.gif" alt="SweetCharm" target="_blank" />
       </div>
+      <div>
+        <h2 class="font-bold mb-4">Link back to me</h2>
+        <div class="flex gap-4 items-center">
+          <ImageLink href="https://mintsorai.com/" img="/mint-sorai-v2.gif" alt="Mint Sorai" target="_blank" />
+          <textarea
+        class="w-[250px] h-[50px] break-words bg-white text-primary text-sm p-0 border-[2px] border-dotted resize-none select-text"
+      ><a href="https://mintsorai.com/"><img src="https://mintsorai.com/mint-sorai-v2.gif" alt="mint sorai"></a></textarea>
+        </div>
+
     </article>
   </main>
 </Layout>

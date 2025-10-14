@@ -1,0 +1,59 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a"> & {
+  label?: string;
+  img?: string;
+  alt: string;
+};
+
+const { label, img, alt, ...props } = Astro.props;
+---
+
+<a
+  href={props.href}
+  class:list={{
+    ["hover:text-primary cursor-pointer"]: true,
+  }}
+  {...props}
+  rel="noreferrer"
+  target="_blank"
+>
+  {
+    img && (
+      <div class="image-container">
+        <img src={img} alt={alt} />
+      </div>
+    )
+  }
+  <span class="text-sm">{label}</span>
+  <span class="sr-only">{label} link</span>
+</a>
+
+<style>
+  .image-contain: {
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center;
+  }
+</style>
+
+<script>
+  const imageContainers = document.querySelectorAll(".image-container");
+
+  imageContainers.forEach((container) => {
+    if (container) {
+      const img = container.querySelector("img");
+      if (img) {
+        container.addEventListener("mouseenter", () => {
+          img.style.transform = "scale(1.3)";
+          img.style.transition = "transform 0.3s ease-in-out";
+        });
+
+        container.addEventListener("mouseleave", () => {
+          img.style.transform = "scale(1)";
+          img.style.transition = "transform 0.3s ease-in-out";
+        });
+      }
+    }
+  });
+</script>

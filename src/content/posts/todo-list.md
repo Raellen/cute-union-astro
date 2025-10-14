@@ -10,4 +10,5 @@ isDraft: false
 - [ ] 3. guest book (https://www.htmlcommentbox.com/)
 - [ ] 4. shrines page(favorite things)
 - [ ] 5. gallery page
-- [ ] 6. Fix the list style of the posts
+- [x] 6. Fix the list style of the posts
+- [x] 7. Logo
