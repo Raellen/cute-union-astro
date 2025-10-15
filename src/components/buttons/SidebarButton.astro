@@ -1,0 +1,44 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a"> & {
+  label: string;
+  img?: string;
+};
+
+const { label, img, ...props } = Astro.props;
+import removeTrailingSlash from "@/utils/removeTrailingSlash";
+const pathname = removeTrailingSlash(Astro.url.pathname);
+---
+
+<li 
+class="block  hover:bg-[#d4efff] my-[0.5rem] border border-[#a0c8e0] border-dashed p-[0.5rem] rounded-[10px]"
+    class:list={{
+     'bg-[#d4efff]': pathname === props.href,
+    'bg-[#f0fbff] hover:bg-[#d4efff]': pathname !== props.href,
+    }}
+>
+  <a
+    href={props.href}
+    class="block w-full no-underline text-[#5596c2] "
+    {...props}
+    target="_self"
+  >
+    {
+      img && (
+        <div class="image-container">
+          <img class="border-4 border-dotted border-[#add8e6] rounded-[20px] w-full mb-[1rem]" src={img} alt={label} />
+        </div>
+      )
+    }
+    {label}</a
+  >
+</li>
+
+
+<style>
+    li:hover {
+    background: #d4efff;
+    transform: scale(1.03);
+  }
+</style>

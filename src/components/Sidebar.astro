@@ -1,78 +1,26 @@
 ---
 import removeTrailingSlash from "@/utils/removeTrailingSlash";
 import presentation from "@/data/presentation";
-
+import SidebarButton from "./buttons/SidebarButton.astro";
 const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
-<aside class="sidebar-left">
+<aside id="sidebar-left" class="w-[20%] text-center">
   <!-- <img src="/assets/avatar.png" alt="avatar" /> -->
   <nav role="navigation">
-    <ul role="list">
-      <li>
-        <a
-          href="/"
-          class="block w-full"
-          class:list={{
-            ["hover:text-primary"]: true,
-            ["text-primary"]: pathname === "/",
-          }}>Home</a
-        >
-      </li>
-      <li>
-        <a
-          href="/about"
-          class="block w-full"
-          class:list={{
-            ["hover:text-primary"]: true,
-            ["text-primary"]: pathname === "/about",
-          }}>About</a
-        >
-      </li>
-      <li>
-        <a
-          href="/posts"
-          class="block w-full"
-          class:list={{
-            ["hover:text-primary"]: true,
-            ["text-primary"]: pathname === "/posts",
-          }}>Posts</a
-        >
-      </li>
-      <li>
-        <a
-          href="/links"
-          class="block w-full"
-          class:list={{
-            ["hover:text-primary"]: true,
-            ["text-primary"]: pathname === "/posts",
-          }}>Links</a
-        >
-      </li>
+    <ul role="list" class="list-none p-0 m-0">
+      <SidebarButton href="/" label="Home"/>
+      <SidebarButton href="/about" label="About"/>
+      <SidebarButton href="/posts" label="Posts"/>
+      <SidebarButton href="/links" label="Links"/>
+      <SidebarButton href="/guestbook" label="Guestbook"/>
     </ul>
   </nav>
 </aside>
 
 <style>
-  .sidebar-left {
-    width: 20%;
-    text-align: center;
-  }
-  .sidebar-left img {
-    border: 4px dotted #add8e6;
-    border-radius: 20px;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  .sidebar-left nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .sidebar-left nav a {
-    text-decoration: none;
-    color: #5596c2;
-  }
+
+
   .sidebar-left nav li:hover {
     background: #d4efff;
     transform: scale(1.03);
@@ -84,7 +32,7 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
     padding: 0.5rem;
     border-radius: 10px;
   }
-  .sidebar-left.pink nav li:hover {
+  /* .sidebar-left.pink nav li:hover {
     background: #ffe0eb;
   }
   .sidebar-left.pink img {
@@ -97,5 +45,5 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
   }
   .sidebar-left.pink nav a {
     color: #da6d88;
-  }
+  } */
 </style>
