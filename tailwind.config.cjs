@@ -13,7 +13,7 @@ module.exports = {
         'light-blue': '#f0fbff'
       },
       fontFamily: {
-        gothic: ["MS Gothic",...defaultTheme.fontFamily.sans],
+        gothic: ["ms gothic",...defaultTheme.fontFamily.sans],
         sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
       },
     },

@@ -2,16 +2,16 @@
   @apply bg-slate-900 bg-opacity-80;
 }
 
-@font-face {
-  font-family: 'MS Gothic'; 
-  src: url('/fonts/MSGOTHIC.TTF') format('truetype');
-}
+/* @font-face {
+  font-family: "ms gothic";
+  src: url("/fonts/MSGOTHIC.TTF") format("truetype"),
+    url("fonts/MS Gothic.woff") format("woff"),
+    url("fonts/MS Gothic.woff2") format("woff2");
+} */
 
 ul {
   /* @apply list-disc list-inside; */
 }
 ol {
-  @apply list-decimal list-inside;
+  @apply list-inside list-decimal;
 }
-
-
