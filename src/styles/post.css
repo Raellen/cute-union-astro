@@ -39,21 +39,4 @@
   @apply bg-transparent;
 }
 
-.text-primary {
-  color: var(--primary-color);
-}
-.border-primary {
-  border-color: var(--primary-color);
-}
-.text-secondary {
-  color: var(--secondary-color);
-}
-
-.border-secondary {
-  border-color: var(--secondary-color);
-}
-
-.border-tertiary{
-  border-color: var(--tertiary-color);
-}
 

@@ -7,7 +7,7 @@ isDraft: false
 ---
 - [x] 1. Comment system (Cusdis)
 - [ ] 2. Status coffee
-- [ ] 3. guest book (https://www.htmlcommentbox.com/)
+- [x] 3. guest book (https://www.htmlcommentbox.com/)
 - [ ] 4. shrines page(favorite things)
 - [ ] 5. gallery page
 - [x] 6. Fix the list style of the posts

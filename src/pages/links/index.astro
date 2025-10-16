@@ -24,7 +24,11 @@ const posts = await getCollection("posts");
       </div>
       <div>
         <h2 class="font-bold mb-4">Credits</h2>
-        <ImageLink href="https://sweetcharm.net/" img="/images/links/bannericeream.gif" alt="SweetCharm" target="_blank" />
+        <div class="flex gap-4">
+          <ImageLink href="https://sweetcharm.net/" img="/images/links/bannericeream.gif" alt="SweetCharm" target="_blank" />
+          <ImageLink href="https://www.flaticon.com/authors/taufik-ramadhan" alt="taufik-ramadhan" target="_blank" label="taufik-ramadhan" />
+          <ImageLink href="https://www.flaticon.com/authors/frelayasia" alt="frelayasia" target="_blank" label="frelayasia" />
+        </div>
       </div>
       <div>
         <h2 class="font-bold mb-4">Link back to me</h2>
@@ -38,3 +42,4 @@ const posts = await getCollection("posts");
     </article>
   </main>
 </Layout>
+
