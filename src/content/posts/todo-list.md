@@ -9,7 +9,7 @@ isDraft: false
 - [ ] 2. Status coffee
 - [x] 3. guest book (https://www.htmlcommentbox.com/)
 - [ ] 4. shrines page(favorite things)
-- [ ] 5. gallery page
+- [x] 5. gallery page
 - [x] 6. Fix the list style of the posts
 - [x] 7. Logo
 - [ ] 8. Tutorials page of website making

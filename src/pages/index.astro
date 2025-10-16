@@ -39,20 +39,24 @@ const { Content } = await todoList.render(); //
         <h3 class="text-primary text-lg font-bold">Updates</h3>
         <section class="flex flex-col max-h-[250px] p-4 gap-4 overflow-y-scroll bg-white w-full">
           {
-            updates.length !== 0 &&
-              updates
-                .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
-                .slice(0, 10)
-                .map((updates) => (
-                  <UpdateCard
-                    publishedAt={updates.data.publishedAt}
-                    title={updates.data.title}
-                    description={updates.data.description}
-                    slug={updates.slug}
-                  />
-                ))
-          }
-          <Link href="/updates" label="...See all updates"  target="_self" />
+      updates.length !== 0 &&
+        updates
+          .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+          .slice(0, 10)
+          .map(async (update) => { // <-- 1. 加上 async
+            const { Content } = await update.render(); // <-- 2. 取得 Content 元件
+            return (
+              <UpdateCard
+                publishedAt={update.data.publishedAt}
+                title={update.data.title}
+                slug={update.slug}
+              >
+                <Content /> 
+              </UpdateCard>
+            );
+          })
+    }
+    <Link href="/updates" label="...See all updates" target="_self" />
         </section> 
       </article>
 

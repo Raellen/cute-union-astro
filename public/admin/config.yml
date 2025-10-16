@@ -10,6 +10,7 @@ media_folder: public/images
 public_folder: /images
 site_url: "https://cute-union.com/" # your site name
 
+# 文章分類
 collections:
   - name: post
     label: Posts
@@ -28,6 +29,20 @@ collections:
   - name: updates
     label: Updates
     folder: src/content/updates
+    create: true
+    format: frontmatter
+    preview_path: post/{{slug}}
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: publishedAt, label: Date, widget: date }
+      - {label: "Publish", name: "isPublish", widget: "boolean", default: true}
+      - {label: "Draft", name: "isDraft", widget: "boolean", default: false}
+      - { name: body, label: Body, widget: markdown }
+
+  - name: gallery
+    label: Gallery
+    folder: src/content/gallery
     create: true
     format: frontmatter
     preview_path: post/{{slug}}

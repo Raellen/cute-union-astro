@@ -15,3 +15,14 @@ ul {
 ol {
   @apply list-inside list-decimal;
 }
+
+.update-content img{
+  display: inline-block;
+}
+.update-content a {
+  @apply text-primary underline decoration-dotted;
+}
+
+.update-content a:hover {
+@apply text-secondary;
+}
