@@ -30,7 +30,7 @@
   cursor: pointer;
   padding: 0.5rem;
   margin-bottom: 10px;
-  color: #fff;
+  color: #fff !important;
 }
 #HCB_comment_box #hcb_submit:active, #HCB_comment_form_box button:active {
   background: #f0fbff !important;
