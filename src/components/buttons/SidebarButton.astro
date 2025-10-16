@@ -4,9 +4,10 @@ import type { HTMLAttributes } from "astro/types";
 type Props = HTMLAttributes<"a"> & {
   label: string;
   img?: string;
+  update?: boolean;
 };
 
-const { label, img, ...props } = Astro.props;
+const { label, img, update,...props } = Astro.props;
 import removeTrailingSlash from "@/utils/removeTrailingSlash";
 const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
@@ -31,8 +32,15 @@ class="block  hover:bg-[#d4efff] my-[0.5rem] border border-[#a0c8e0] border-dash
         </div>
       )
     }
-    {label}</a
-  >
+    <span
+    class:list={[
+      "label-text",
+      { "has-update": update === true } 
+    ]}
+    >
+      {label}
+    </span>
+    </a>
 </li>
 
 
@@ -40,5 +48,23 @@ class="block  hover:bg-[#d4efff] my-[0.5rem] border border-[#a0c8e0] border-dash
     li:hover {
     background: #d4efff;
     transform: scale(1.03);
+  }
+  .has-update {
+    position: relative;
+  }
+
+  .has-update::after {
+    content: ''; 
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: -60%;
+    width: 18px;
+    height: 7px;
+    background-image: url('/src/images/icons/up_030.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle; 
+    transform: translate(-50%,-50%);
   }
 </style>
