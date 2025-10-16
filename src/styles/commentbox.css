@@ -69,7 +69,13 @@ small {
 #HCB_comment_box .comment {
   position: relative;
   max-width: 75%;
-    margin-bottom: 1px !important;
+  margin-bottom: 1px !important;
+}
+#HCB_comment_box .comment blockquote{
+ display: block;
+}
+#HCB_comment_box .comment blockquote::before{
+  background-color: #5596c2;
 }
 
 .hcb-link.del {
