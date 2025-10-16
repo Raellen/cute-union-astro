@@ -13,3 +13,4 @@ isDraft: false
 - [x] 6. Fix the list style of the posts
 - [x] 7. Logo
 - [ ] 8. Tutorials page of website making
+- [ ] 9. Webring page or section

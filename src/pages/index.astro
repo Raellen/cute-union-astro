@@ -75,6 +75,7 @@ const { Content } = await todoList.render(); //
         {
           posts.length !== 0 &&
             posts
+              .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
               .slice(0, 2)
               .map((post) => (
                 <PostCard
