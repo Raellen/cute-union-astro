@@ -2,12 +2,13 @@
 import removeTrailingSlash from "@/utils/removeTrailingSlash";
 import presentation from "@/data/presentation";
 import SidebarButton from "./buttons/SidebarButton.astro";
+import ClapButton from "./tools/ClapButton.astro";
 const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
-<aside id="sidebar-left" class="w-[20%] text-center">
+<aside id="sidebar-left" class="flex flex-col justify-between w-[20%] text-center">
   <!-- <img src="/assets/avatar.png" alt="avatar" /> -->
-  <nav role="navigation">
+  <nav role="navigation" class="flex flex-col h-full">
     <ul role="list" class="list-none p-0 m-0">
       <SidebarButton href="/" label="Home"/>
       <SidebarButton href="/about" label="About"/>
@@ -17,6 +18,7 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
       <SidebarButton href="/guestbook" label="Guestbook"/>
     </ul>
   </nav>
+  <ClapButton/>
 </aside>
 
 <style>

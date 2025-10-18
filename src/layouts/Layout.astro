@@ -1,6 +1,8 @@
 ---
 import Sidebar from "../components/Sidebar.astro";
 import SEOTags from "@/components/seo/SEOTags.astro";
+import Counter from "@/components/tools/Counter.astro";
+
 
 import "@/styles/tailwind.css";
 import "@/styles/post.css";
@@ -21,7 +23,7 @@ const { title } = Astro.props;
     </style>
   </head>
   <body>
-    <div class="outer-box">
+    <div class="outer-box overflow-hidden">
       <div class="layout-container">
         <Sidebar />
 
@@ -32,17 +34,7 @@ const { title } = Astro.props;
     </div>
 
     <footer class="flex flex-col items-center justify-between overflow-hidden">
-      <!-- FC2計數器 開始 -->
-      <script
-        language="javascript"
-        type="text/javascript"
-        src="//counter1.fc2.com/counter.php?id=18028122&main=1"
-      ></script><noscript
-        ><img
-          src="//counter1.fc2.com/counter_img.php?id=18028122&main=1"
-        /></noscript
-      >
-      <!-- FC2計數器 結束 -->
+  <Counter/>
       <span class="text-light-blue">
         Copyright © <span id="current-year"></span> Mint Sorai
       </span>
@@ -110,6 +102,7 @@ const { title } = Astro.props;
         display: flex;
         padding: 1rem;
         min-height: 60vh;
+        height: 100vh;
       }
 
       .main-content {

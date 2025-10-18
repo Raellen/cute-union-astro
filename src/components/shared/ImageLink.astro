@@ -4,10 +4,9 @@ import type { HTMLAttributes } from "astro/types";
 type Props = HTMLAttributes<"a"> & {
   label?: string;
   img?: string;
-  alt: string;
 };
 
-const { label, img, alt, ...props } = Astro.props;
+const { label, img,  ...props } = Astro.props;
 ---
 
 <a
@@ -22,7 +21,7 @@ const { label, img, alt, ...props } = Astro.props;
   {
     img && (
       <div class="image-container">
-        <img src={img} alt={alt} />
+        <img src={img} alt={props.href} />
       </div>
     )
   }

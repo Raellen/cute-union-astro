@@ -19,6 +19,7 @@ const { Content } = await todoList.render(); //
 ---
 
 <Layout>
+  
   <main class="flex flex-col gap-20 px-10">
     <article class="flex flex-col gap-8">
       <div class="flex">
@@ -35,9 +36,9 @@ const { Content } = await todoList.render(); //
     </article>
 
     <div class="flex flex-col md:flex-row gap-8">
-      <article class="flex flex-col gap-8 w-3/4">
+      <article class="flex flex-col gap-8 w-3/4 min-h-0">
         <h3 class="text-primary text-lg font-bold">Updates</h3>
-        <section class="flex flex-col max-h-[250px] p-4 gap-4 overflow-y-scroll bg-white w-full">
+        <ul class="min-h-0  flex flex-col max-h-[250px] p-4 gap-4 overflow-y-scroll bg-white w-full">
           {
       updates.length !== 0 &&
         updates
@@ -56,13 +57,13 @@ const { Content } = await todoList.render(); //
             );
           })
     }
-    <Link href="/updates" label="...See all updates" target="_self" />
+      <Link href="/updates" label="...See all updates" target="_self" />
         </section> 
       </article>
 
       <article class="flex flex-col gap-8 w-1/4">
         <h3 class="text-primary text-lg font-bold">Todo List</h3>
-        <div class="overflow-auto bg-white h-max-content max-h-[250px] break-words p-4 max-w-fit text-sm leading-7">
+        <div class="overflow-auto flex-1 bg-white max-h-[250px] break-words p-4 max-w-fit text-sm leading-7">
           <Content/>
           <Link href="/posts/todo-list" label="...See all todos"  target="_self" />
         </div>
